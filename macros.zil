@@ -1,0 +1,121 @@
+"MACROS for TRINITY: (C)1986 Infocom, Inc. All rights reserved."
+
+<SETG C-ENABLED? 0>
+
+<SETG C-ENABLED 1>
+
+<SETG C-DISABLED 0>
+
+<TELL-TOKENS (CR CRLF)       <CRLF>
+	     (N NUM) *       <PRINTN .X>
+	     (C CHAR CHR) *  <PRINTC .X>
+	     (D DESC) *      <PRINTD .X>
+	     (A AN) *	     <PRINTA .X>
+	     THE *	     <THE-PRINT .X>
+	     CTHE *	     <CTHE-PRINT .X>
+	     THEO	     <THE-PRINT>
+	     CTHEO	     <CTHE-PRINT>
+	     CTHEI	     <CTHEI-PRINT>
+	     THEI	     <THEI-PRINT>>
+
+<DEFMAC VERB? ("ARGS" ATMS)
+	<MULTIFROB PRSA .ATMS>>
+
+<DEFMAC PRSO? ("ARGS" ATMS)
+	<MULTIFROB PRSO .ATMS>>
+
+<DEFMAC PRSI? ("ARGS" ATMS)
+	<MULTIFROB PRSI .ATMS>>
+
+<DEFMAC HERE? ("ARGS" ATMS)
+	<MULTIFROB HERE .ATMS>>
+
+<DEFINE MULTIFROB (X ATMS "AUX" (OO (OR)) (O .OO) (LL (T)) (L .LL) ATM)
+	<REPEAT ()
+		<COND (<EMPTY? .ATMS>
+		       <RETURN!- <COND (<LENGTH? .OO 1>
+					<ERROR .X>)
+				       (<LENGTH? .OO 2>
+					<NTH .OO 2>)
+				       (ELSE
+					<CHTYPE .OO FORM>)>>)>
+		<REPEAT ()
+			<COND (<EMPTY? .ATMS>
+			       <RETURN!->)>
+			<SET ATM <NTH .ATMS 1>>
+			<SET L <REST <PUTREST
+				      .L
+				      (<COND (<TYPE? .ATM ATOM>
+					      <CHTYPE <COND (<==? .X PRSA>
+							     <PARSE
+							      <STRING "V?"
+							       <SPNAME .ATM>>>)
+							    (T .ATM)> GVAL>)
+					     (ELSE .ATM)>)>>>
+			<SET ATMS <REST .ATMS>>
+			<COND (<==? <LENGTH .LL> 4>
+			       <RETURN!->)>>
+		<SET O <REST <PUTREST .O
+				      (<FORM EQUAL? <CHTYPE .X GVAL> !<REST .LL>>)>>>
+		<SET LL (T)>
+		<SET L .LL>>>
+
+<DEFMAC RFATAL ()
+	'<PROG () <PUSH 2> <RSTACK>>>
+
+<DEFMAC PROB ('BASE?)
+	<FORM NOT <FORM L? .BASE? '<RANDOM 100>>>>
+
+<DEFMAC ZIL? ()
+	<FORM ZERO? '<GETB 0 18>>>
+
+<DEFMAC ENABLE ('INT)
+	<FORM PUT .INT ,C-ENABLED? 1>>
+
+<DEFMAC DISABLE ('INT)
+	<FORM PUT .INT ,C-ENABLED? 0>>
+
+<DEFMAC GET-REXIT-ROOM ('PT)
+	<FORM GET .PT ',REXIT>>
+
+<DEFMAC GET-DOOR-OBJ ('PT)
+	<FORM GET .PT ',DEXITOBJ>>
+
+<DEFMAC GET/B ('TBL 'PTR)
+	<FORM GET .TBL .PTR>>
+
+<DEFMAC RMGL-SIZE ('TBL)
+	<FORM - <FORM / <FORM PTSIZE .TBL> 2> 1>>
+
+<DEFMAC MAKE ('OBJ 'FLAG)
+	<FORM FSET .OBJ .FLAG>>
+
+<DEFMAC UNMAKE ('OBJ 'FLAG)
+	<FORM FCLEAR .OBJ .FLAG>>
+
+<DEFMAC IS? ('OBJ 'FLAG)
+	<FORM FSET? .OBJ .FLAG>>
+
+<DEFMAC T? ('TERM)
+	<FORM NOT <FORM ZERO? .TERM>>>
+
+<DEFMAC ABS ('NUM)
+	<FORM COND (<FORM L? .NUM 0>
+		    <FORM - 0 .NUM>)
+		   (T
+		    .NUM)>>
+
+<DEFMAC QUOTE? ()
+	<FORM COND (<FORM NOT <FORM EQUAL?
+				    <CHTYPE WINNER GVAL>
+				    <CHTYPE PLAYER GVAL>>>
+		    <FORM PRINTC 34>)>>
+
+<DEFMAC SPACE ()
+	<FORM PRINTC 32>>
+
+<DEFMAC THIS-PRSO? ()
+	<FORM ZERO? <CHTYPE NOW-PRSI? GVAL>>>
+
+<DEFMAC THIS-PRSI? ()
+	<FORM NOT <FORM ZERO? <CHTYPE NOW-PRSI? GVAL>>>>
