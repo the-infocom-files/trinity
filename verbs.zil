@@ -108,7 +108,7 @@
 	 <TELL "[Brief descriptions.]" CR>
 	 <RTRUE>>
 
-<ROUTINE V-SUPER-BRIEF\ ()
+<ROUTINE V-SUPER-BRIEF ()
 	 <COND (<WRONG-WINNER?>
 		<RFATAL>)>
 	 <SETG VERBOSITY 0>
