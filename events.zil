@@ -1808,7 +1808,7 @@ You kick it away with a shout. A rodent sails through the air, lands unharmed an
 		<ALL-IS-STILL>
 		<RTRUE>)>>
 
-<ROUTINE I-MAGPIE ("OPTIONAL" (CR T) "AUX" X CNT)
+<ROUTINE I-MAGPIE ("OPTIONAL" (CR T) "AUX" X)
 	 <COND (<OR <T? ,QUIET?>
 		    <ZERO? ,LIT?>>
 		<RFALSE>)

@@ -62,7 +62,7 @@ You look a little closer and shudder to " D ,ME ,PTHE
 	 <TELL " drowns out your words." CR>
 	 <RTRUE>>
 
-<ROUTINE BWOMAN-F ("OPTIONAL" (CONTEXT <>) "AUX" (Y <>) CNT TBL X)
+<ROUTINE BWOMAN-F ("OPTIONAL" (CONTEXT <>) "AUX" (Y <>))
 	 <COND (<EQUAL? .CONTEXT ,M-WINNER>
 		<COND (<T? ,RAID?>
 		       <DIN-DROWNS>
