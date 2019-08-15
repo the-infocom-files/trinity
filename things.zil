@@ -17636,7 +17636,7 @@ D ,HOPENING "s, " D ,WINDOWS
 		<TELL "The distant " D ,PRSO " bathes the ">
 		<COND (<HERE? IN-SHACK>
 		       <TELL D ,SHACK>)
-		      (TY
+		      (T
 		       <TELL D ,TOWER>)>
 		<TELL " in a raw white glare." CR>
 		<RTRUE>)
