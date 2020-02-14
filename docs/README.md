@@ -20,16 +20,14 @@ The following sources provide further information on Trinity:
 
 ## Version History
 
-Zarf's Obsessively Complete Infocom Catalog holds copies of the game files for every existing version of Trinity listed in the Infocom Fact Sheet. It also holds the source files for versions 12/860926 and 15/870628.
-
-| Release | Serial | Story File                    | Zarf Sources      | Historical Sources |
-| -------:|:------:|:-----------------------------:|:-----------------:|:------------------:|
-|       1 | 851202 | [trinity-alpha-r1-s851202.z4] |                 - |                  - |
-|       1 | 860221 |  [trinity-beta-r1-s860221.z4] |                 - |                  - |
-|      14 | 860313 | [trinity-beta-r14-s860313.z4] |                 - |                  - |
-|      11 | 860509 |      [trinity-r11-s860509.z4] |                 - |                  - |
-|      12 | 860926 |      [trinity-r12-s860926.z4] | [trinity-r12.zip] |      [revision 12] |
-|      15 | 870628 |      [trinity-r15-s870628.z4] | [trinity-r15.zip] |   [final revision] |
+| Release | Serial | Type | Story File                    | Obsessive Sources | Historical Sources |
+| -------:|:------:|:----:|:-----------------------------:|:-----------------:|:------------------:|
+|       1 | 851202 |  DEV | [trinity-alpha-r1-s851202.z4] |                 - |                  - |
+|       1 | 860221 |  DEV |  [trinity-beta-r1-s860221.z4] |                 - |                  - |
+|      14 | 860313 |  DEV | [trinity-beta-r14-s860313.z4] |                 - |                  - |
+|      11 | 860509 |  PUB |      [trinity-r11-s860509.z4] |                 - |                  - |
+|      12 | 860926 |  PUB |      [trinity-r12-s860926.z4] | [trinity-r12.zip] |      [revision 12] |
+|      15 | 870628 |  FIN |      [trinity-r15-s870628.z4] | [trinity-r15.zip] |   [final revision] |
 
 [trinity-alpha-r1-s851202.z4]: https://eblong.com/infocom/gamefiles/trinity-alpha-r1-s851202.z4
 
