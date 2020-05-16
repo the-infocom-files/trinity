@@ -4788,7 +4788,7 @@ Ill-disguised relief passes over the GI's face as the pear man clambers into the
 	 <RFALSE>>
 
 <ROUTINE BUT-HESITATE (STR)
-	 <TELL ", but hesistate when you notice one of the " D ,GIS>
+	 <TELL ", but hesitate when you notice one of the " D ,GIS>
 	 <COND (<G? ,MINUTES 27>
 		<TELL " in the " D ,TRENCHES>)>
 	 <TELL " fingering a " .STR ".|
