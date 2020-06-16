@@ -3947,7 +3947,7 @@ D ,STAIR " along the diagonal edge." CR>)
 	(ADJECTIVE LONG DARK BLACK)
 	(ACTION DSHADOW-F)>
 
-<ROUTINE DSHADOW-F ("AUX" X)
+<ROUTINE DSHADOW-F ()
 	 <COND (<VERB? EXAMINE WATCH>
 		<TELL "The long " D ,DSHADOW " stretches " <GET ,SHDIRS 3>
 		      ,AGROUND>
@@ -5499,7 +5499,7 @@ You're blown violently away from the " D ,XRAY>
 	       (T
 		<RFALSE>)>>
 
-<ROUTINE LUMP-F ("AUX" OBJ NXT)
+<ROUTINE LUMP-F ()
 	 <COND (<AND <T? ,SUITED?>
 		     <NOT <IS? ,LUMP ,TRYTAKE>>
 		     <NOT <GOT? ,LUMP>>>
@@ -6618,7 +6618,7 @@ You curse and fume at the stupid, flimsy " D ,PRSI
 	(GENERIC GENERIC-BOOT-F)
 	(ACTION GBOOT-F)>
 
-<ROUTINE GENERIC-BOOT-F (TABLE "AUX" LEN)
+<ROUTINE GENERIC-BOOT-F (TABLE)
 	 <COND (<EQUAL? ,P-IT-OBJECT ,RBOOT ,GBOOT>
 		<RETURN ,P-IT-OBJECT>)
 	       (<OR <EQUAL? ,P-NAM ,W?BOOTS ,W?PAIR>
@@ -7817,7 +7817,7 @@ When you peek again, a tiny pair of wings has sprouted out of the heel." CR>
 
 "TOUCHED = looked inside."
 
-<ROUTINE FISSURE-F ("AUX" X)
+<ROUTINE FISSURE-F ()
 	 <COND (<THIS-PRSI?>
 		<COND (<VERB? PUT>
 		       <PRSO-FALLS-DEEP>
@@ -10414,7 +10414,7 @@ With an electric whirr, the heavy doors slide ">
 	(ADJECTIVE LOUD PA P\.A\.)
 	(ACTION LSPEAKERS-F)>
 
-<ROUTINE LSPEAKERS-F ("AUX" STR)
+<ROUTINE LSPEAKERS-F ()
 	 <COND (<AND <VERB? LISTEN>
 		     <NOT <IS? ,TSWITCH ,OPENED>>>
 		<TELL CTHEO " click and hiss." CR>
@@ -17636,7 +17636,7 @@ D ,HOPENING "s, " D ,WINDOWS
 		<TELL "The distant " D ,PRSO " bathes the ">
 		<COND (<HERE? IN-SHACK>
 		       <TELL D ,SHACK>)
-		      (TY
+		      (T
 		       <TELL D ,TOWER>)>
 		<TELL " in a raw white glare." CR>
 		<RTRUE>)
